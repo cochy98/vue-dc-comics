@@ -58,7 +58,7 @@ nav {
 
       a {
         text-decoration: none;
-        color: black;
+        color: #2c3136;
       }
     }
 
