@@ -23,25 +23,27 @@
           <div class="col">
             <h6>Dc</h6>
             <ul>
-              <li><a href="#">Characters</a></li>
-              <li><a href="#">Comics</a></li>
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">Tv</a></li>
-              <li><a href="#">Games</a></li>
-              <li><a href="#">Videos</a></li>
-              <li><a href="#">News</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">Privacy policy (New)</a></li>
+              <li><a href="#">Add Choices</a></li>
+              <li><a href="#">Advertising</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Subscriptions</a></li>
+              <li><a href="#">Talent Workshops</a></li>
+              <li><a href="#">CPSC Certificates</a></li>
+              <li><a href="#">Ratings</a></li>
+              <li><a href="#">Shop Help</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
           <div class="col">
             <h6>Sites</h6>
             <ul>
-              <li><a href="#">Characters</a></li>
-              <li><a href="#">Comics</a></li>
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">Tv</a></li>
-              <li><a href="#">Games</a></li>
-              <li><a href="#">Videos</a></li>
-              <li><a href="#">News</a></li>
+              <li><a href="#">DC</a></li>
+              <li><a href="#">MAD Magazine</a></li>
+              <li><a href="#">DC Kids</a></li>
+              <li><a href="#">DC Universe</a></li>
+              <li><a href="#">DC Power Visa</a></li>
             </ul>
           </div>
         </div>
@@ -50,40 +52,16 @@
         </div>
       </div>
     </section>
+
     <section id="footer-bottom">
       <div class="container">
         <a class="action-btn">Sign-Up now!</a>
-
         <ul class="social-links">
           <li><a href="#">Follow us</a></li>
-          <li>
-            <a href="#"
-              ><img src="../assets/img/footer-facebook.png" alt="fb logo"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img src="../assets/img/footer-twitter.png" alt="twitter logo"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img src="../assets/img/footer-youtube.png" alt="youtube logo"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="../assets/img/footer-pinterest.png"
-                alt="pinterest logo"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="../assets/img/footer-periscope.png"
-                alt="periscope logo"
-            /></a>
+          <li v-for="(element, index) in footerSocialLinks" :key="index">
+            <a :href="element.url">
+              <img :src="element.path" :alt="element.text" />
+            </a>
           </li>
         </ul>
       </div>
@@ -94,6 +72,37 @@
 <script>
 export default {
   name: "IndexFooter",
+  data: function () {
+    return {
+      footerSocialLinks: [
+        {
+          text: "FB Logo",
+          path: require("../assets/img/footer-facebook.png"),
+          url: "#",
+        },
+        {
+          text: "Twitter Logo",
+          path: require("../assets/img/footer-twitter.png"),
+          url: "#",
+        },
+        {
+          text: "Youtube Logo",
+          path: require("../assets/img/footer-youtube.png"),
+          url: "#",
+        },
+        {
+          text: "Pinterest Logo",
+          path: require("../assets/img/footer-pinterest.png"),
+          url: "#",
+        },
+        {
+          text: "Periscope Logo",
+          path: require("../assets/img/footer-periscope.png"),
+          url: "#",
+        },
+      ],
+    };
+  },
 };
 </script>
 

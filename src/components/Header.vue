@@ -8,16 +8,13 @@
           alt="DC Logo"
         />
         <ul>
-          <li><a href="#">Characters</a></li>
-          <li class="active"><a href="#">Comics</a></li>
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">Tv</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">Collectibles</a></li>
-          <li><a href="#">Videos</a></li>
-          <li><a href="#">Fans</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Shop</a></li>
+          <li
+            v-for="(element, index) in headerLinks"
+            :key="index"
+            :class="{ active: element.current }"
+          >
+            <a :href="element.url">{{ element.text }}</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -28,7 +25,60 @@
 export default {
   name: "IndexHeader",
   data: function () {
-    return {};
+    return {
+      headerLinks: [
+        {
+          text: "Characters",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Comics",
+          url: "#",
+          current: true,
+        },
+        {
+          text: "Movies",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Tv",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Games",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Collectibles",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Videos",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Fans",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "News",
+          url: "#",
+          current: false,
+        },
+        {
+          text: "Shop",
+          url: "#",
+          current: false,
+        },
+      ],
+    };
   },
 };
 </script>
@@ -63,7 +113,7 @@ nav {
     }
 
     li.active {
-      border-bottom: 2px solid #0282f9;
+      border-bottom: 3px solid #0282f9;
     }
 
     li.active a {
