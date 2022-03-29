@@ -4,16 +4,16 @@
       <img src="../assets/img/jumbotron.jpg" alt="jumbotron" />
     </div>
     <div class="container cards">
-      <!-- <div class="card-box" v-for="(element, index) in cards" :key="index">
-        <img :src="element.thumb" :alt="element.type" class="card-image" />
-        <h6 class="card-description">{{ element.series }}</h6>
-      </div> -->
+      <span class="section-description">Current series</span>
 
+      <!-- Ciclo sulla pagina che mostra le singole card, per il numero di card -->
       <ContentCard
         v-for="(card, index) in cards"
         :key="index"
         :cardElement="card"
       />
+
+      <a href="#" class="btn-more">Load more</a>
     </div>
   </section>
 </template>
@@ -136,25 +136,29 @@ section#main-content {
     justify-content: center;
     flex-wrap: wrap;
     padding: 3rem 0;
+    position: relative;
 
-    /* div.card-box {
-      width: 200px;
-      margin: 0.5rem;
+    span.section-description {
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      padding: 1rem 1.7rem;
+      background-color: #0282f9;
       text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
 
-      img.card-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        object-position: top;
-      }
-
-      .card-description {
-        padding: 0.8rem 0 1.2rem;
-        font-size: 0.8rem;
-        font-weight: 500;
-      }
-    } */
+    a.btn-more {
+      color: white;
+      padding: 0.5rem 3rem;
+      background-color: #0282f9;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
   }
 }
 </style>
