@@ -12,7 +12,8 @@
         :key="index"
         :cardElement="card"
       />
-
+    </div>
+    <div class="more-cards">
       <a href="#" class="btn-more">Load more</a>
     </div>
   </section>
@@ -148,6 +149,11 @@ section#main-content {
       font-weight: 700;
       font-size: 1.2rem;
     }
+  }
+
+  div.more-cards {
+    text-align: center;
+    padding: 1rem 0 3rem;
 
     a.btn-more {
       color: white;
@@ -157,7 +163,6 @@ section#main-content {
       text-transform: uppercase;
       font-size: 0.7rem;
       font-weight: 600;
-      margin-top: 2rem;
     }
   }
 }
